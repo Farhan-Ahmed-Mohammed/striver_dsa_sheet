@@ -10,7 +10,7 @@ public:
         {
             sum+=nums[i];
 
-            if(count.find(sum-goal)!=count.end())
+            if(count.find(sum-goal)!=count.end()) // it means check till last if count[sum-goal] is present or not if not present we reach count.end()
             {
                 ans+=count[sum-goal];
             }
