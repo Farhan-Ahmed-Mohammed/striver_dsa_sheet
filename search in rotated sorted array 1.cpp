@@ -55,14 +55,14 @@ public:
             
         
             
-            if(nums[pivot]<=target  && target<=nums[n-1])
+            if(nums[pivot]<=target  && target<=nums[n-1])  // now search from pivot to end of array 
             {
                 return binarySearch(nums,target,pivot,high);
             }
 
             else
             {
-                return binarySearch(nums,target,low,pivot-1);
+                return binarySearch(nums,target,low,pivot-1);  // search from start to pivot
             }
            
         
