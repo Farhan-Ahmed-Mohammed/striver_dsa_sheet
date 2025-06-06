@@ -62,7 +62,7 @@ public:
 //             left++;
 //         }
 //         seen.insert(s[right]);
-//         ans = max(ans, right - left + 1);
+//         ans = max(ans, right - left + 1);  // right - left +1 means size of window that is end-start+1 we used cnt in place of it
 //     }
 
 //     return ans;
