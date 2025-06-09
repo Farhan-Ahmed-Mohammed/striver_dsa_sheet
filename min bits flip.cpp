@@ -1,4 +1,25 @@
-brute force
+class Solution { real solution beats 100% unisng but manupulaiton
+public:
+    int minBitFlips(int start, int goal) {
+        int xorResult=start^goal; // here no need to convert it will automatically convert when we use ^ and when both different then we get 1 in xor so if we get 1 in xor so cnt++
+        int cnt=0;
+        while(xorResult)
+        {
+            if(xorResult&1==1)
+            {
+                cnt++;
+            }
+
+            xorResult=xorResult>>1;
+        }
+        return cnt;
+        
+    }
+};
+
+
+
+//brute force
 class Solution {
 public:
     int minBitFlips(int start, int goal) {
