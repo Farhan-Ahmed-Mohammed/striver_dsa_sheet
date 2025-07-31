@@ -32,3 +32,41 @@ public:
         
     }
 };
+
+// more easy solution
+
+class Solution {
+public:
+    string removeOuterParentheses(string s) {
+        int n=s.size();
+        string ans;
+        int cnt1=0;
+        int cnt2=0;
+
+        for(int i=0;i<n;i++)
+        {
+            if(s[i]=='(')
+            {
+                cnt1++;
+            }
+
+            if(s[i]==')')
+            {
+                cnt2++;
+            }
+
+            if(cnt1>cnt2 && cnt1>1)
+            {
+                ans+=s[i];
+            }
+
+            if(cnt1==cnt2)
+            {
+                cnt1=0;
+                cnt2=0;
+            }
+        }
+        return ans;
+        
+    }
+};
