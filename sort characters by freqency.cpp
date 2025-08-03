@@ -48,3 +48,35 @@ public:
         
     }
 };
+
+//optimisesd solution using priority queue
+class Solution {
+public:
+    string frequencySort(string s) {
+        unordered_map<char,int> freq;
+        int n=s.size();
+        for(int i=0;i<n;i++)
+        {
+            freq[s[i]]++;
+        }
+
+        priority_queue<pair<int,char>> pq; // queue will be sorted based on first what written here <int,char> so based on int it is sorted but if <char,int> based on char they will be sorted
+
+        for(auto it=freq.begin();it!=freq.end();++it)
+        {
+            pq.push({it->second,it->first});
+        }
+
+        string result;
+        while(!pq.empty())
+        {
+            int cnt=pq.top().first;
+            char ch=pq.top().second;
+            pq.pop();
+            result.append(cnt,ch); // here char is appended cnt no of times
+        }
+
+        return result;
+
+    }
+};
