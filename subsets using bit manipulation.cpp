@@ -4,7 +4,7 @@ public:
         int n=nums.size();
         vector<vector<int>> ans;
         vector<int> temp;
-        int subsets=1<<n; // we can also write 2^n 
+        int subsets=1<<n; // we can also write 2^n if means do left shift for 1 n times 1<<3 means 0001 bcms 1000 we did left shift 3 times 
 
         for(int num=0;num<subsets;num++) // numbers form 0 to 7 in case 1
         {
