@@ -12,7 +12,7 @@ public:
             for(int i=0;i<n;i++)
             {
                 if(num&(1<<i)) // here it means if its ==1 dont use ==1 bcoz if is evaluated first as it have more precedence than &
-                {
+                {              //1<<i means we get 001 first next 010 next 100 we keep changing all 1 positions to get the all subsets
                     temp.push_back(nums[i]);
                 }
             }
