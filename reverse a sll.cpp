@@ -23,7 +23,7 @@ public:
             temp=fard;
         }
 
-        return prev;
+        return prev;  // as temp becms null but prev is the last node so we return it
 
         
     }
