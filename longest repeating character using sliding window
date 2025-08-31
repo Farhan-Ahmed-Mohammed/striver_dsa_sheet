@@ -1,0 +1,27 @@
+class Solution {
+public:
+    int characterReplacement(string s, int k) {
+        vector<int> freq(26,0);
+        int left=0;
+        int maxlen=0;
+        int maxfreq=0;
+        for(int right=0;right<s.size();right++)
+        {
+            freq[s[right]-'A']++;
+            maxfreq=max(maxfreq, freq[s[right]-'A']);
+            if((right-left+1)-maxfreq<=k) // to get min freq we will subtract the size from maxfreq and then we get the min freq characters
+            {
+                maxlen=max(maxlen,right-left+1);
+            }
+
+            while((right-left+1)-maxfreq>k) //if min freq characters are more we move our left farward
+            {
+                freq[s[left]-'A']--;
+                left++;
+            }
+
+        }
+        return maxlen;
+
+    }
+};
