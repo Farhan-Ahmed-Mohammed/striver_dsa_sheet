@@ -41,3 +41,51 @@ public:
         return true;
     }
 };
+
+//most optimal soluiton
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+long long pre=LLONG_MIN;
+    void in(TreeNode* temp,bool &ans)
+    {
+        if(temp==NULL)
+        {
+            return;
+        }
+
+        in(temp->left,ans);
+        if(temp!=NULL)
+        {
+           if(temp->val<=pre)
+           {
+            ans=false;
+           }
+           pre=temp->val;
+        }
+        in(temp->right,ans);
+    }
+
+    bool isValidBST(TreeNode* root) {  //we can make it more optimised just stroe the previousn in some consatnt and compare evenery time in the inorder function it pre is grater then ans=false or else ans is true
+    if(root->left==NULL && root->right==NULL)
+    {
+        return true;
+    }
+        TreeNode* temp=root;
+        bool ans=true;
+        in(temp,ans);
+       
+       
+        return ans;
+    }
+};
