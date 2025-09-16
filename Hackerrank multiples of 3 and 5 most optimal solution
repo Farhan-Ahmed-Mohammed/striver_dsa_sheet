@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+
+long long solve(int n,int k)
+{
+    long long m=(n-1)/k; //we are taking all the numbers divisible by k as in question it is said that less than n if equal to n we take n/k
+    
+    return k*m*(m+1)/2;  // we get divisible by k now take its sum with sum of m terms formula and as we want multiplews of k multiply by k
+}
+
+int main(){
+    int t;
+    cin >> t;
+    
+    for(int a0 = 0; a0 < t; a0++){
+        int n;
+        cin >> n;
+        long long sum=solve(n,3)+solve(n,5)-solve(n,15);
+        
+       
+     
+    cout<<sum<<endl
+}
+return 0;
+}
