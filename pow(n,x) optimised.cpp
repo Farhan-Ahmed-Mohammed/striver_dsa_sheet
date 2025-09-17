@@ -45,6 +45,38 @@ public:
             m=m/2;
         }
 
+//recursive more optimised code
+        class Solution {
+public:
+    double myPow(double x, int n) {
+        long long m=n;
+
+        if(m==0)
+        {
+            return 1;
+        }
+
+
+        if(m<0)
+        {
+           
+           m=-m;
+           x= 1/x;
+           
+        }
+
+        if(m%2==0)
+        {
+            return myPow(x*x,m/2);
+        }
+
+        else{
+            return x*myPow(x*x,m/2);
+        }
+        
+    }
+};
+
         
         return temp;
         
