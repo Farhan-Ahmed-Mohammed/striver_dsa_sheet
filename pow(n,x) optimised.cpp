@@ -60,7 +60,7 @@ public:
         if(m<0)
         {
            
-           m=-m;
+           m=-m; // here we have it make it positive bcoz again if it do 1/x then we get number ans 1/1/x is x so we make it positive here
            x= 1/x;
            
         }
