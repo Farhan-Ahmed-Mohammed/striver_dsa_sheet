@@ -34,6 +34,9 @@ public:
             }
         }
         return ans;
+
+        //return haystack.find(needle);  its a built in function
+
         
     }
 };
